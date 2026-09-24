@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lapbook Interativo - Rabanete</title>
+<style>
+:root{--rosa:#c92f68;--rosa-claro:#f6a7c2;--fundo:#fffaf5;--verde:#69bd63;--texto:#35252c}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:Arial,sans-serif;color:var(--texto);background:linear-gradient(135deg,#fff8fb,#fffdf8)}
+header{padding:50px 20px 80px;text-align:center;background:linear-gradient(135deg,#b92760,#e85d8c);color:white}
+.badge{display:inline-block;background:#ffffff30;border:1px solid #ffffff55;padding:8px 15px;border-radius:999px;font-weight:bold}
+h1{font-size:clamp(2.5rem,7vw,5.5rem);margin:15px 0;letter-spacing:4px}
+.subtitle{font-size:1.1rem;max-width:700px;margin:auto;line-height:1.6}
+nav{position:sticky;top:0;z-index:20;background:#ffffffee;padding:10px;text-align:center;box-shadow:0 4px 18px #00000010}
+nav a{display:inline-block;color:var(--rosa);text-decoration:none;font-weight:bold;padding:9px 12px;border-radius:12px}
+nav a:hover{background:#fff0f5}
+main{max-width:1050px;margin:auto;padding:30px 18px 70px}
+.section-title{font-size:2rem;margin:45px 0 18px;color:var(--rosa)}
+.card{background:white;border:1px solid #f3dce5;border-radius:24px;padding:22px;box-shadow:0 12px 30px rgba(75,30,45,.12)}
+.hero-photo{width:100%;max-height:560px;object-fit:contain;background:#f7f1ed;border-radius:22px;padding:10px}
+.video-container{margin-top:25px;text-align:center}
+.video-container h3{color:var(--rosa);font-size:1.5rem;margin-bottom:15px}
+.video-container video{width:100%;max-height:600px;border-radius:22px;background:#000;box-shadow:0 12px 30px rgba(75,30,45,.18)}
+.steps{display:grid;gap:14px;counter-reset:step}
+.step{display:flex;gap:15px;align-items:flex-start;background:white;border-radius:18px;padding:17px;border:1px solid #f1dbe4;box-shadow:0 8px 20px #0000000d}
+.step::before{counter-increment:step;content:counter(step);flex:0 0 38px;height:38px;border-radius:50%;display:grid;place-items:center;background:var(--rosa);color:white;font-weight:bold}
+.tip{background:#e9f8e5;border-left:7px solid var(--verde);border-radius:18px;padding:18px;margin-top:18px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px}
+.grid .card h2{color:var(--rosa)}
+.timeline{display:flex;flex-wrap:wrap;gap:12px}
+.phase{flex:1 1 180px;background:white;border-radius:20px;padding:18px;text-align:center;border:1px solid #efd9e2;box-shadow:0 8px 20px #0000000d}
+.emoji{font-size:2.2rem}
+.flip-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:15px}
+.flip{height:170px;perspective:900px;cursor:pointer}
+.flip-inner{position:relative;width:100%;height:100%;transition:transform .55s;transform-style:preserve-3d}
+.flip.flipped .flip-inner{transform:rotateY(180deg)}
+.face{position:absolute;inset:0;backface-visibility:hidden;border-radius:20px;padding:20px;display:grid;place-items:center;text-align:center;box-shadow:0 8px 20px #0000000d}
+.front{background:#ffe7ef;color:var(--rosa);font-weight:bold}
+.back{background:#e9f8e5;transform:rotateY(180deg);line-height:1.5}
+.quiz{background:linear-gradient(135deg,#fff0f6,#effbea);border-radius:26px;padding:24px;border:1px solid #eed9e3}
+.option{display:block;width:100%;text-align:left;border:1px solid #e7cfd9;background:white;border-radius:14px;padding:13px;margin:9px 0;cursor:pointer;font-size:1rem}
+.option:hover{border-color:var(--rosa)}
+#quizResult{font-weight:bold;margin-top:14px;min-height:24px}
+.primary{border:0;background:var(--rosa);color:white;border-radius:999px;padding:12px 18px;font-weight:bold;cursor:pointer}
+footer{text-align:center;padding:30px;color:#76515e}
+</style>
+</head>
+<body>
+
+<header>
+<div class="badge">🌱 Projeto escolar • Lapbook digital</div>
+<h1>RABANETE</h1>
+<p class="subtitle">Uma versão interativa do seu lapbook, com informações, cuidados, benefícios, curiosidades e quiz.</p>
+</header>
+
+<nav>
+<a href="#lapbook">📖 Lapbook</a>
+<a href="#plantio">🌱 Plantio</a>
+<a href="#cuidados">💚 Cuidados</a>
+<a href="#beneficios">✨ Benefícios</a>
+<a href="#curiosidades">💡 Curiosidades</a>
+<a href="#quiz">🧠 Quiz</a>
+</nav>
+
+<main>
+
+<section id="lapbook">
+<h2 class="section-title">📖 O seu lapbook</h2>
+<div class="card">
+<img src="IMG_241F2F40-4600-46C8-BF5E-7F53F38E255C.jpeg" alt="Lapbook sobre rabanete" class="hero-photo">
+<p>Este site transforma o conteúdo do seu lapbook de rabanete em uma experiência digital e interativa! 🌱</p>
+
+<div class="video-container">
+<h3>🎥 Vídeo do projeto</h3>
+<video controls preload="metadata">
+<source src="203135.mp4" type="video/mp4">
+Seu navegador não consegue reproduzir este vídeo.
+</video>
+</div>
+</div>
+</section>
+
+<section id="plantio">
+<h2 class="section-title">🌱 Como plantar</h2>
+<div class="steps">
+<div class="step"><div><b>Plante as sementes</b><br>Coloque as sementes a aproximadamente <b>1 cm de profundidade</b>.</div></div>
+<div class="step"><div><b>Mantenha o solo úmido</b><br>Regue com frequência, mas sem deixar a terra encharcada.</div></div>
+<div class="step"><div><b>Escolha um local iluminado</b><br>O rabanete gosta de bastante luz solar.</div></div>
+<div class="step"><div><b>Acompanhe o crescimento</b><br>A germinação acontece em poucos dias e a colheita pode ocorrer aproximadamente entre 20 e 40 dias, dependendo das condições.</div></div>
+</div>
+<div class="tip">🌡️ <b>Dica:</b> o rabanete cresce melhor em temperaturas mais amenas, aproximadamente entre <b>15 °C e 25 °C</b>.</div>
+<h3 style="color:#c92f68;">🌱 Etapas do crescimento</h3>
+<div class="timeline">
+<div class="phase"><div class="emoji">🫘</div><b>Semente</b><p>Começo do plantio.</p></div>
+<div class="phase"><div class="emoji">🌱</div><b>Germinação</b><p>A plantinha começa a aparecer.</p></div>
+<div class="phase"><div class="emoji">🌿</div><b>Crescimento</b><p>Folhas e raiz se desenvolvem.</p></div>
+<div class="phase"><div class="emoji">🔴</div><b>Rabanete</b><p>Momento de observar a colheita.</p></div>
+</div>
+</section>
+
+<section id="cuidados">
+<h2 class="section-title">💚 Cuidados importantes</h2>
+<div class="grid">
+<div class="card"><h2>💧 Água</h2><p>Regue regularmente, mas evite deixar o solo encharcado.</p></div>
+<div class="card"><h2>🌍 Solo</h2><p>Prefira um solo fofo e bem drenado.</p></div>
+<div class="card"><h2>☀️ Luz</h2><p>O rabanete precisa de bastante iluminação.</p></div>
+<div class="card"><h2>📏 Espaço</h2><p>Deixe espaço suficiente entre as plantas para que as raízes possam crescer.</p></div>
+</div>
+</section>
+
+<section id="beneficios">
+<h2 class="section-title">✨ Benefícios</h2>
+<div class="card">
+<ul>
+<li>🥬 Possui vitaminas, incluindo vitamina C e vitaminas do complexo B.</li>
+<li>🍽️ Pode fazer parte de uma alimentação variada e contribuir para a digestão.</li>
+<li>💚 Possui minerais como potássio, cálcio e magnésio.</li>
+</ul>
+</div>
+</section>
+
+<section id="curiosidades">
+<h2 class="section-title">💡 Curiosidades</h2>
+<div class="flip-grid">
+<div class="flip" onclick="this.classList.toggle('flipped')"><div class="flip-inner"><div class="face front">🌱 Clique para descobrir</div><div class="face back">O rabanete pode germinar em poucos dias!</div></div></div>
+<div class="flip" onclick="this.classList.toggle('flipped')"><div class="flip-inner"><div class="face front">🔴 Clique para descobrir</div><div class="face back">A parte que normalmente comemos é a raiz da planta.</div></div></div>
+<div class="flip" onclick="this.classList.toggle('flipped')"><div class="flip-inner"><div class="face front">💚 Clique para descobrir</div><div class="face back">As folhas do rabanete também podem ser aproveitadas em receitas.</div></div></div>
+</div>
+</section>
+
+<section id="quiz">
+<h2 class="section-title">🧠 Quiz do Rabanete</h2>
+<div class="quiz">
+<h3>Qual é a profundidade indicada para plantar as sementes?</h3>
+<button class="option" onclick="responder(false)">A) 5 cm</button>
+<button class="option" onclick="responder(true)">B) 1 cm</button>
+<button class="option" onclick="responder(false)">C) 10 cm</button>
+<div id="quizResult"></div>
+<br>
+<button class="primary" onclick="resetar()">Tentar novamente</button>
+</div>
+</section>
+
+</main>
+
+<footer>🌱 Lapbook Interativo do Rabanete</footer>
+
+<script>
+function responder(correta){
+const resultado=document.getElementById("quizResult");
+if(correta){
+resultado.innerHTML="🎉 Acertou! A resposta é 1 cm.";
+}else{
+resultado.innerHTML="💡 Quase! Tente novamente.";
+}
+}
+function resetar(){
+document.getElementById("quizResult").innerHTML="";
+}
+</script>
+
+</body>
+</html>
